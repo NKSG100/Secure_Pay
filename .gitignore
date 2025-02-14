@@ -11,7 +11,3 @@ frontend/build/
 
 # Ignore log files
 *.log
-
-# Ignore dependency lock files (optional, if you don’t want to commit them)
-yarn.lock
-pnpm-lock.yaml
