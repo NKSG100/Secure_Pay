@@ -1,9 +1,7 @@
 const errorMiddleware = (err, req, res, next) => {
-  // Determine the status code and error message
   const statusCode = err.statusCode || 500;
   const message = err.message || "Server Error";
 
-  // Log the error for debugging purposes
   console.error("Error:", {
     statusCode,
     message,
@@ -12,11 +10,9 @@ const errorMiddleware = (err, req, res, next) => {
     method: req.method,
   });
 
-  // Send the error response
   res.status(statusCode).json({
-    success: false, // Indicate that the request failed
+    success: false,
     message,
-    stack: process.env.NODE_ENV === "development" ? err.stack : null, // Include stack trace in development
   });
 };
 

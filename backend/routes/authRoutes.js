@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const { registerUser, loginUser } = require("../controllers/authController");
-const { body, validationResult } = require("express-validator"); // For input validation
+const { body, validationResult } = require("express-validator");
 
-// Input validation middleware
 const validateInput = (validationRules) => {
   return [
     validationRules,
@@ -17,28 +16,19 @@ const validateInput = (validationRules) => {
   ];
 };
 
-// @route   POST /api/auth/register
-// @desc    Register a new user
 router.post(
   "/register",
   validateInput([
-    body("username").notEmpty().withMessage("Username is required"),
-    body("email").isEmail().withMessage("Invalid email address"),
-    body("password")
-      .isLength({ min: 6 })
-      .withMessage("Password must be at least 6 characters long"),
+    body("username").notEmpty(),
+    body("email").isEmail(),
+    body("password").isLength({ min: 6 }),
   ]),
   registerUser
 );
 
-// @route   POST /api/auth/login
-// @desc    Log in an existing user
 router.post(
   "/login",
-  validateInput([
-    body("email").isEmail().withMessage("Invalid email address"),
-    body("password").notEmpty().withMessage("Password is required"),
-  ]),
+  validateInput([body("email").isEmail(), body("password").notEmpty()]),
   loginUser
 );
 

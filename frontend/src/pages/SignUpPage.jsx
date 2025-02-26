@@ -28,10 +28,9 @@ const SignUpPage = () => {
       });
 
       const data = await response.json();
-      console.log(data);
       if (response.ok) {
         setSuccess("Account created successfully! Redirecting to Sign In...");
-        setTimeout(() => navigate("/signin"), 2000); // Redirect to sign-in page after 2 seconds
+        setTimeout(() => navigate("/signin"), 2000);
       } else {
         setError(data.msg || "An error occurred. Please try again.");
       }
@@ -42,8 +41,8 @@ const SignUpPage = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-900 to-gray-800">
-      <div className="bg-gray-800 p-8 rounded-xl shadow-xl w-full max-w-md space-y-6 transform hover:scale-105 transition-transform duration-300">
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 text-center">
+      <div className="bg-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-md space-y-6 transform hover:scale-105 transition-transform duration-300 hover:shadow-purple-500/50">
+        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 text-center animate-pulse">
           Sign Up
         </h2>
         {error && <div className="text-red-500 text-center">{error}</div>}

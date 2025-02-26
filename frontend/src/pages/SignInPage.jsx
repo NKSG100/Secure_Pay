@@ -22,9 +22,9 @@ const SignInPage = ({ setAuthenticated }) => {
 
       const data = await response.json();
       if (response.ok) {
-        saveToken(data.token); // Save the token to localStorage
-        setAuthenticated(true); // Update the authentication state
-        navigate("/dashboard"); // Redirect to the dashboard
+        saveToken(data.token);
+        setAuthenticated(true);
+        navigate("/dashboard");
       } else {
         setError(data.msg || "Login failed. Please try again.");
       }
@@ -35,8 +35,8 @@ const SignInPage = ({ setAuthenticated }) => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-900 to-gray-800">
-      <div className="bg-gray-800 p-8 rounded-xl shadow-xl w-full max-w-md space-y-6 transform hover:scale-105 transition-transform duration-300">
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 text-center">
+      <div className="bg-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-md space-y-6 transform hover:scale-105 transition-transform duration-300 hover:shadow-purple-500/50">
+        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 text-center animate-pulse">
           Sign In
         </h2>
         {error && <div className="text-red-500 text-center">{error}</div>}

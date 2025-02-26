@@ -21,10 +21,16 @@ const Navbar = () => {
           {isAuthenticated() ? (
             <>
               <span className="text-blue-400">Welcome {user?.username}</span>
-              <button onClick={() => {navigate("/dashboard")}} className="hover:text-blue-400 transition-colors duration-300">
-                Dasboard
+              <button
+                onClick={() => navigate("/dashboard")}
+                className="hover:text-blue-400 transition-colors duration-300"
+              >
+                Dashboard
               </button>
-              <button onClick={handleLogout} className="hover:text-blue-400 transition-colors duration-300">
+              <button
+                onClick={handleLogout}
+                className="hover:text-blue-400 transition-colors duration-300"
+              >
                 Logout
               </button>
             </>

@@ -11,16 +11,13 @@ import { isAuthenticated } from "./utils/auth";
 const App = () => {
   const [authenticated, setAuthenticated] = useState(isAuthenticated());
 
-  // Listen for changes in authentication state
   useEffect(() => {
     const handleStorageChange = () => {
       setAuthenticated(isAuthenticated());
     };
 
-    // Add event listener for localStorage changes
     window.addEventListener("storage", handleStorageChange);
 
-    // Cleanup the event listener
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };
@@ -28,19 +25,13 @@ const App = () => {
 
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
         <Navbar authenticated={authenticated} setAuthenticated={setAuthenticated} />
         <div className="flex-grow">
           <Routes>
             <Route
               path="/"
-              element={
-                authenticated ? (
-                  <DashboardPage />
-                ) : (
-                  <Navigate to="/signin" />
-                )
-              }
+              element={authenticated ? <DashboardPage /> : <Navigate to="/signin" />}
             />
             <Route
               path="/signin"
@@ -50,13 +41,7 @@ const App = () => {
             <Route path="/about" element={<AboutPage />} />
             <Route
               path="/dashboard"
-              element={
-                authenticated ? (
-                  <DashboardPage />
-                ) : (
-                  <Navigate to="/signin" />
-                )
-              }
+              element={authenticated ? <DashboardPage /> : <Navigate to="/signin" />}
             />
           </Routes>
         </div>
