@@ -17,6 +17,10 @@ app.use(cors(
 ));
 app.use(morgan("dev"));
 app.get('/favicon.ico', (req, res) => res.status(204));
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
 const authRoutes = require("./routes/authRoutes");
 const transactionRoutes = require("./routes/transactionRoutes");
 const userRoutes = require("./routes/userRoutes");
