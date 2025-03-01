@@ -16,6 +16,14 @@ app.use(cors(
   }
 ));
 app.use(morgan("dev"));
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://secure-pay-sepia.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 app.get('/favicon.ico', (req, res) => res.status(204));
 app.get("/", (req, res) => {
   res.send("API is running...");
