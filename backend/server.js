@@ -16,7 +16,7 @@ app.use(cors(
   }
 ));
 app.use(morgan("dev"));
-
+app.get('/favicon.ico', (req, res) => res.status(204));
 const authRoutes = require("./routes/authRoutes");
 const transactionRoutes = require("./routes/transactionRoutes");
 const userRoutes = require("./routes/userRoutes");
