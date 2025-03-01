@@ -8,7 +8,7 @@ const AboutPage = () => {
           About Us
         </h2>
         <p className="text-lg text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Welcome to our platform. We provide easy and secure ways to send and receive money. Our mission is to make financial transactions simple and accessible to everyone.
+          Welcome to Secure Pay platform. We provide easy and secure ways to send and receive money. Our mission is to make financial transactions simple and accessible to everyone.
         </p>
 
         <section className="bg-gray-800 shadow-2xl rounded-xl p-10 md:p-12 space-y-8 mb-14 transform hover:scale-105 transition-transform duration-300 hover:shadow-purple-500/50">
@@ -34,7 +34,7 @@ const AboutPage = () => {
                 href="mailto:support@example.com"
                 className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
               >
-                support@example.com
+                nksnamannks@gmail.com
               </a>
             </li>
             <li>
@@ -43,10 +43,10 @@ const AboutPage = () => {
                 href="tel:+1234567890"
                 className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
               >
-                +123 456 7890
+                +7983293372
               </a>
             </li>
-            <li>Address: 1234 Street, City, Country</li>
+            <li>Address: Saharanpur, Uttar Pradesh , 247001</li>
           </ul>
         </section>
       </main>

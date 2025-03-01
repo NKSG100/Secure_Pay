@@ -19,7 +19,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const transactionsResponse = await fetch("http://localhost:5000/api/transactions", {
+        const transactionsResponse = await fetch("https://secure-pay-backend.vercel.app/api/transactions", {
           headers: {
             Authorization: `Bearer ${getToken()}`,
           },
@@ -32,7 +32,7 @@ const DashboardPage = () => {
         const transactionsData = await transactionsResponse.json();
         setTransactions(transactionsData);
 
-        const userResponse = await fetch(`http://localhost:5000/api/users/${user.id}`, {
+        const userResponse = await fetch(`https://secure-pay-backend.vercel.app/api/users/${user.id}`, {
           headers: {
             Authorization: `Bearer ${getToken()}`,
           },
@@ -91,7 +91,7 @@ const DashboardPage = () => {
         payload.receiverId = formData.receiverId;
       }
 
-      const response = await fetch("http://localhost:5000/api/transactions", {
+      const response = await fetch("https://secure-pay-backend.vercel.app/api/transactions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
